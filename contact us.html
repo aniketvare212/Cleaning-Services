@@ -1,0 +1,359 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Bar</title>
+    <link rel="stylesheet" href="contact us.css">
+   
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            background-image: url('./Images/image6.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            padding: 10px 20px;
+            color: white;
+        }
+        
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .navbar .menu a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        
+        .navbar .menu a:hover {
+            color: #ffdd57;
+        }
+        
+        .profile-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+        
+        .profile-btn img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+        /* Footer Section */
+        .footer {
+            background-color: black;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+            text-align: left;
+        }
+        
+        .footer-about,
+        .footer-links,
+        .footer-contact {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer h3,
+        .footer h4 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .footer p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-links ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links ul li a:hover {
+            color: #00c4ff;
+        }
+        
+        .footer-bottom {
+            background-color: #4d9cf0;
+            padding: 10px 0;
+            font-size: 0.8rem;
+            margin-top: 10px;
+        }
+        
+        
+        
+        
+        /* Animations */
+        @keyframes slide-in {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes pop-up {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-info img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+        .contact-details {
+            max-width: 500px;
+        }
+        .contact-details h2 {
+            margin: 0 0 10px;
+        }
+        .contact-details p {
+            margin: 5px 0;
+        }
+        .contact-section {
+            padding: 50px 0;
+            background: #fff;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-form {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .input-box {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .input-box input,
+        .input-box textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            resize: none;
+        }
+        
+        .input-box label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            pointer-events: none;
+            transition: 0.5s;
+        }
+        
+        .input-box input:focus + label,
+        .input-box input:valid + label,
+        .input-box textarea:focus + label,
+        .input-box textarea:valid + label {
+            top: -20px;
+            left: 10px;
+            color: #333;
+            font-size: 12px;
+        }
+        
+        input[type="submit"] {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        input[type="submit"]:hover {
+            background: #555;
+        }
+        
+
+    </style>
+    <div class="navbar">
+        <div class="logo">Cleaning Services</div>
+        <div class="menu">
+            <a href="Home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services_book.html">Services</a>
+            <a href="contact us.html">Contact</a>
+            <a href="login.html">Logout</a>
+            <a href="profile.html" class="profile-btn">
+                <img src="images/ankit.jpg" alt="User">
+                <span>Profile</span>
+            </a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="contact-info">
+            <img src="./Images/Aniket.jpg" alt="Person Image">
+            <div class="contact-details">
+                <h2>Aniket Vare</h2>
+                <p><strong>Email:</strong> aniketvare212@gmail.com</p>
+                <p><strong>Phone:</strong> +91 7020699657</p>
+                <p><strong>Address:</strong> PATIL NAGAR BAVDHAN</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="contact-info">
+            <img src="./Images/ankit.jpg" alt="Person Image">
+            <div class="contact-details">
+                <h2>Ankit Sakpal</h2>
+                <p><strong>Email:</strong> ankitvsakpal@gmail.com</p>
+                <p><strong>Phone:</strong> +91 7588213025</p>
+                <p><strong>Address:</strong> PATIL NAGAR BAVDHAN</p>
+            </div>
+        </div>
+    </div>
+   
+
+    <section class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>If you have any questions, feel free to reach out to us!</p>
+            <div class="contact-form">
+                <form action="contact.php" method="post">
+                    <div class="input-box">
+                        <input type="text" name="name" required>
+                        <label>Full Name</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" name="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <textarea name="message" required></textarea>
+                        <label>Message</label>
+                    </div>
+                    <div class="input-box">
+                        <input href="tel:7020699657" type="submit" value="Send">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+   
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>Cleaning Services Co.</h3>
+                <p>Your trusted partner for spotless spaces. We offer residential, commercial, and industrial cleaning services tailored to your needs.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services_book.html">Services</a></li>
+                    <li><a href="contact us.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>Email: info@cleaningservices.com</p>
+                <p>Phone: +123 456 7890</p>
+                <p>Address: 123 Clean Street, Spotless City</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Cleaning Services Co. | All Rights Reserved</p>
+        </div>
+    </footer>
+    
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,20 @@
+h1{
+    text-align: center;
+    font-size: 30px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.container {
+    position: relative;
+    height: 100vh; /* Ensure container has height */
+  }
+  
+  img {
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  /* Center the image */
+  }
+  
+  
